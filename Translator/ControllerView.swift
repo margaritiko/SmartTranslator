@@ -9,15 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    
-    //  get current text box when user Begin editing
+    // Main tableView with messages
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var activeTextField: UITextField?
+    // Main textField.
+    @IBOutlet weak var textField: UITextField?
+    // Constraint for moving tableView and textView up and down when keyboard appeared
     @IBOutlet weak var bottomLayoutTextField: NSLayoutConstraint!
+    
     override func viewWillAppear(_ animated: Bool) {
-        // call method for keyboard notification
+        // Calling method for adding observers for keyboard's events
         self.setNotificationKeyboard()
-        
     }
     
     // Notification when keyboard show
@@ -28,17 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification , object: nil)
     }
     
-    // get current text field
-    func textFieldDidBeginEditing(_ textField: UITextField)
-    {
-        activeTextField=textField;
-    }
-    func textFieldDidEndEditing(_ textField: UITextField)
-    {
-        activeTextField = nil;
-    }
-    
-    // Changes the position of the text field to avoid overlapping.
+    // Changing the position of the text field to avoid overlapping.
     @objc func keyboardWasShown(notification: NSNotification)
     {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
@@ -52,15 +43,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // Moves the objects down after the keyboard disappears.
     @objc func keyboardWillBeHidden(notification: NSNotification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
-            // Raising input field when keyboard appears.
-            // Necessary as the keyboard overlaps the text field.
+            // Raising input field when keyboard appears
+            // Necessary as the keyboard overlaps the text field
             bottomLayoutTextField.constant -= keyboardFrame.cgRectValue.height;
-            // tableView.frame.size.height -= keyboardFrame.cgRectValue.height;
         }
         self.view.endEditing(true)
     }
     
-    // Pressing anywhere other than the keyboard causes it to disappear.
+    // Keyboard disappear after click somewhere else from text field
     @IBAction func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -77,6 +67,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         
         return false
-    }
+     }
     
 }
