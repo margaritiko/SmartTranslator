@@ -148,8 +148,9 @@ class InputPresenter {
             switch response.result {
             case .success:
                 guard let jsonArray = response.result.value as? Optional<[String: Any]> else { return }
-                guard let arrayWithLanguages = jsonArray?["dirs"]! as? [String] else { return }
-                self.listOfSupportedLanguages[lang] = arrayWithLanguages
+                if let arrayWithLanguages = jsonArray?["dirs"] {
+                    self.listOfSupportedLanguages[lang] = arrayWithLanguages as? [String]
+                }
             case .failure:
                 return
             }
