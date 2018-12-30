@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		5C3E575521C4518600B3FF04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E575321C4518600B3FF04 /* Main.storyboard */; };
 		5C3E575821C6576000B3FF04 /* record.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5C3E575721C6576000B3FF04 /* record.gif */; };
-		5C3E575A21C6581D00B3FF04 /* GifMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E575921C6581D00B3FF04 /* GifMethods.swift */; };
 		5C3E575C21C6D50200B3FF04 /* MessagesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3E575B21C6D50200B3FF04 /* MessagesModel.swift */; };
 		5C3E577C21C6F26900B3FF04 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C3E576B21C6F21600B3FF04 /* Alamofire.framework */; };
 		5C3E577D21C6F28500B3FF04 /* Alamofire.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 5C3E576B21C6F21600B3FF04 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5C40E82821C819B90024EF27 /* MessageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C40E82721C819B90024EF27 /* MessageViewCell.swift */; };
+		5C8DF36921D9600B006DE8F5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8DF36821D9600B006DE8F5 /* Constants.swift */; };
 		5CC0292421BEA4F1006D1BD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC0292321BEA4F1006D1BD8 /* AppDelegate.swift */; };
 		5CC0292B21BEA4F4006D1BD8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CC0292A21BEA4F4006D1BD8 /* Assets.xcassets */; };
 		5CC0292E21BEA4F4006D1BD8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CC0292C21BEA4F4006D1BD8 /* LaunchScreen.storyboard */; };
@@ -101,10 +101,10 @@
 		03EA0DC2D1C5E0BBB22D6DE6 /* Pods-Translator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Translator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Translator/Pods-Translator.debug.xcconfig"; sourceTree = "<group>"; };
 		5C3E575421C4518600B3FF04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5C3E575721C6576000B3FF04 /* record.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = record.gif; path = ../../../../../Desktop/PROJECTS/Translator/record.gif; sourceTree = "<group>"; };
-		5C3E575921C6581D00B3FF04 /* GifMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifMethods.swift; sourceTree = "<group>"; };
 		5C3E575B21C6D50200B3FF04 /* MessagesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesModel.swift; sourceTree = "<group>"; };
 		5C3E575F21C6F21600B3FF04 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		5C40E82721C819B90024EF27 /* MessageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewCell.swift; sourceTree = "<group>"; };
+		5C8DF36821D9600B006DE8F5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5CC0292021BEA4F1006D1BD8 /* Translator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Translator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CC0292321BEA4F1006D1BD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CC0292A21BEA4F4006D1BD8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -186,6 +186,7 @@
 				5C3E575621C6573D00B3FF04 /* Gifs */,
 				5CC0292321BEA4F1006D1BD8 /* AppDelegate.swift */,
 				5C3E575321C4518600B3FF04 /* Main.storyboard */,
+				5C8DF36821D9600B006DE8F5 /* Constants.swift */,
 				5CC0292A21BEA4F4006D1BD8 /* Assets.xcassets */,
 				5CC0292C21BEA4F4006D1BD8 /* LaunchScreen.storyboard */,
 				5CC0292F21BEA4F4006D1BD8 /* Info.plist */,
@@ -193,7 +194,6 @@
 				5CC0293C21BFED7E006D1BD8 /* InputView.swift */,
 				5CC0293E21C148C9006D1BD8 /* InputPresenter.swift */,
 				5CC0294021C164F1006D1BD8 /* InputModel.swift */,
-				5C3E575921C6581D00B3FF04 /* GifMethods.swift */,
 				5C3E575B21C6D50200B3FF04 /* MessagesModel.swift */,
 				5C40E82721C819B90024EF27 /* MessageViewCell.swift */,
 			);
@@ -221,6 +221,7 @@
 				5CC0291D21BEA4F1006D1BD8 /* Frameworks */,
 				5CC0291E21BEA4F1006D1BD8 /* Resources */,
 				5C3E577A21C6F24200B3FF04 /* Copy Framework */,
+				16959B623A23D00F2DA73720 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,6 +339,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		16959B623A23D00F2DA73720 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Translator/Pods-Translator-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Translator/Pods-Translator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		A21C6546773C65F20B8D7E19 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,7 +397,7 @@
 				5CC0292421BEA4F1006D1BD8 /* AppDelegate.swift in Sources */,
 				5CC0293F21C148C9006D1BD8 /* InputPresenter.swift in Sources */,
 				5C3E575C21C6D50200B3FF04 /* MessagesModel.swift in Sources */,
-				5C3E575A21C6581D00B3FF04 /* GifMethods.swift in Sources */,
+				5C8DF36921D9600B006DE8F5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

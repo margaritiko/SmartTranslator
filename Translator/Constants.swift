@@ -26,25 +26,9 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
-import Foundation
 import UIKit
 
-struct Message {
-    var notTranslatedText: String
-    var translatedText: String
-    // Maybe one of two options: FromRussianToEnglish or FromEnglishToRussian
-    var typeOfTranslation: Input.TypeOfTranslation
-    // True when this message is from user, false when it was made by a code
-    var isMessageFromUser: Bool
-    
-    init(notTranslatedText: String, translatedText: String, type: Input.TypeOfTranslation, isMessageFromUser: Bool) {
-        self.notTranslatedText = notTranslatedText
-        self.translatedText = translatedText
-        self.typeOfTranslation = type
-        self.isMessageFromUser = isMessageFromUser
-    }
-    
-    public func getTypeOfTranslation() -> Input.TypeOfTranslation {
-        return typeOfTranslation
-    }
-}
+let RED_COLOR = UIColor(red: 237/255, green: 76/255, blue: 92/255, alpha: 255)
+let BLUE_COLOR = UIColor(red: 0, green: 124/255, blue: 233/255, alpha: 255)
+
+let KEY: String = "trnsl.1.1.20181208T170958Z.d9e46c17a941ee1e.8b20f9a86d2ac9239fc02149c0c0e5eaacb2ffe0"

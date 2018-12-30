@@ -1,38 +1,71 @@
-//
-//  MessageTableViewCell.swift
-//
-//
-//  Created by Маргарита Коннова on 17/12/2018.
-//
+/// Copyright (c) 2018 Margarita Konnova
+///
+/// Permission is hereby granted, free of charge, to any person obtaining a copy
+/// of this software and associated documentation files (the "Software"), to deal
+/// in the Software without restriction, including without limitation the rights
+/// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+/// copies of the Software, and to permit persons to whom the Software is
+/// furnished to do so, subject to the following conditions:
+///
+/// The above copyright notice and this permission notice shall be included in
+/// all copies or substantial portions of the Software.
+///
+/// Notwithstanding the foregoing, you may not use, copy, modify, merge, publish,
+/// distribute, sublicense, create a derivative work, and/or sell copies of the
+/// Software in any work that is designed, intended, or marketed for pedagogical or
+/// instructional purposes related to programming, coding, application development,
+/// or information technology.  Permission for such use, copying, modification,
+/// merger, publication, distribution, sublicensing, creation of derivative works,
+/// or sale is expressly withheld.
+///
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+/// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+/// THE SOFTWARE.
 
 import UIKit
 
 class MessageViewCell: UITableViewCell {
+    
     @IBOutlet weak var headerText: UILabel!
     @IBOutlet weak var detailsText: UILabel!
     @IBOutlet weak var cell: UIView!
     
+    @IBOutlet weak var leftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightConstraint: NSLayoutConstraint!
+    
+    var isMessageFromUser: Bool
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        isMessageFromUser = true
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        isMessageFromUser = true
+        super.init(coder: aDecoder)!
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        cell.layer.cornerRadius = 15
+        cell.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        self.transform = CGAffineTransform(rotationAngle: .pi)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
-    }
-    
-    public func setDefaultColor() {
-        cell.backgroundColor = UIColor.lightGray
     }
     
     public func setRedColor() {
-        cell.backgroundColor = UIColor(red: 220/255, green: 88/255, blue: 96/255, alpha: 255)
+        cell.backgroundColor = RED_COLOR
     }
     
     public func setBlueColor() {
-        cell.backgroundColor = UIColor(red: 47/255, green: 125/255, blue: 225/255, alpha: 255)
+        cell.backgroundColor = BLUE_COLOR
     }
     
     public func setHeaderText(text: String) {
@@ -43,4 +76,19 @@ class MessageViewCell: UITableViewCell {
         detailsText.text = text
     }
     
+    func moveToRight() {
+        leftConstraint.constant = 100
+        rightConstraint.constant = 0
+    }
+    
+    func changeCornerRadiusForNotUserMessages() {
+        cell.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner, .layerMinXMaxYCorner]
+    }
+
+    // Change the length of the message depending on the length of the text
+    func correctLength(length: Int) {
+        leftConstraint.constant = CGFloat(0)
+        rightConstraint.constant = CGFloat(max(270 - 10 * length, 100))
+        isMessageFromUser = true
+    }
 }

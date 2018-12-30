@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MessageTableViewCell.swift">
-   </FileRef>
-   <FileRef
       location = "group:Translator.xcodeproj">
    </FileRef>
    <FileRef

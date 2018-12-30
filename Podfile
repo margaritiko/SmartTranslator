@@ -6,5 +6,6 @@ target 'Translator' do
   use_frameworks!
 
   # Pods for Translator
+  pod ‘SwiftGifOrigin’, ‘~> 1.6.1’
 
 end
