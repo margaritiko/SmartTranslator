@@ -62,12 +62,14 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
     override func viewDidAppear(_ animated: Bool) {
         // Updating constraints for logo depending on the orientation of the device
         if UIDevice.current.orientation.isLandscape {
-            leftYandexLogoConstraint.constant = (UIScreen.main.bounds.size.width - 202) / 2
-            rightYandexLogoConstraint.constant = (UIScreen.main.bounds.size.width - 202) / 2
+            let width = max(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
+            leftYandexLogoConstraint.constant = (width - 202) / 2
+            rightYandexLogoConstraint.constant = (width - 202) / 2
         }
         else {
-            leftYandexLogoConstraint.constant = 106
-            rightYandexLogoConstraint.constant = 106
+            let width = UIScreen.main.bounds.size.width
+            leftYandexLogoConstraint.constant = (width - 202) / 2
+            rightYandexLogoConstraint.constant = (width - 202) / 2
         }
     }
     
@@ -80,8 +82,9 @@ class ViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegat
             rightYandexLogoConstraint.constant = (width - 202) / 2
         }
         else {
-            leftYandexLogoConstraint.constant = 106
-            rightYandexLogoConstraint.constant = 106
+            let width = min(UIScreen.main.bounds.size.width, UIScreen.main.bounds.size.height)
+            leftYandexLogoConstraint.constant = (width - 202) / 2
+            rightYandexLogoConstraint.constant = (width - 202) / 2
         }
     }
     

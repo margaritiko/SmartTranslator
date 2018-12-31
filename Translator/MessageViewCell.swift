@@ -87,8 +87,10 @@ class MessageViewCell: UITableViewCell {
 
     // Change the length of the message depending on the length of the text
     func correctLength(length: Int) {
-        leftConstraint.constant = CGFloat(0)
-        rightConstraint.constant = CGFloat(max(270 - 10 * length, 100))
-        isMessageFromUser = true
+        if UIScreen.main.bounds.size.width > 320 {
+            leftConstraint.constant = CGFloat(0)
+            rightConstraint.constant = CGFloat(max(270 - 10 * length, 100))
+            isMessageFromUser = true
+        }
     }
 }
